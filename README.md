@@ -11,6 +11,7 @@ xss.sh is the automation of the following work
 
 Usage:
 ./xss.sh
+
 ![image](https://github.com/dirtycoder0124/xss/assets/16449867/480b5b4e-4fb8-45f6-81f3-2bb15fa4ad8c)
 
 Automatically Save all XSS results in Vulnerable_XSS.txt.
