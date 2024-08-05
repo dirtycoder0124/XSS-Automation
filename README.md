@@ -30,6 +30,10 @@ cd domain-recon-script
 chmod +x recon.sh
 ./recon.sh
 ```
+## Note
+
+Before use, remember to replace the Blind XSS payload with your own in the `recon.sh` file, or remove the `-b` option completely.
+![image](https://github.com/user-attachments/assets/d61c5b7d-acb9-4634-9dee-c8d4f56386ee)
 
 ### The script will install the following tools if they are not already installed:
 
@@ -45,9 +49,6 @@ chmod +x recon.sh
 - `uro`
 - `gf`
 
-## Note
-
-Before use, remember to replace the Blind XSS payload with your own in the `recon.sh` file, or remove the `-b` option completely.
 
 ## Usage
 
