@@ -1,4 +1,4 @@
-xss.sh is the automation of the following work
+xss-automation.sh is the automation of the following work
 
 1. subfinder -d indeed.com -o indeed.txt                                //Find Subdomains
 2. httpx -l subdomains.txt -o httpx.txt                                 // Live Subdomains
