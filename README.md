@@ -57,8 +57,9 @@ Run the script and follow the prompts to perform reconnaissance on a domain:
 ```bash
 ./recon.sh
 ```
+![image](https://github.com/user-attachments/assets/4519493a-b4ba-49eb-af84-7eb8902270a4)
 
-- **Step 1**: Enter the domain name when prompted.
+- Enter the domain name when prompted.
 - The script will create a `results/<domain>` directory to store output files.
 - Each tool will generate specific data files, which will be saved in the corresponding directory.
 
@@ -75,6 +76,7 @@ The script generates several output files for each domain:
 - `live_uro1.txt`: Live endpoints.
 - `xss_ready.txt`: Potential XSS vectors.
 - `Vulnerable_XSS.txt`: Confirmed XSS vulnerabilities.
+![image](https://github.com/user-attachments/assets/6e4b1bd7-0522-4dce-8dda-c0b41a36e9dc)
 
 ## Legal Disclaimer
 
