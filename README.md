@@ -32,16 +32,27 @@ chmod +x recon.sh
 ## The script will install the following tools if they are not already installed:
 
 -waybackurls
+
 -gau
+
 -anew
+
 -subfinder
+
 -httpx
+
 -gospider
+
 -hakrawler
+
 -katana
+
 -dalfox
+
 -uro
+
 -gf
+
 
 ## Note:
 Before use keep remembering to replace my blind XSS payload with yours in the /recon.sh. Or remove the -b option completely 
