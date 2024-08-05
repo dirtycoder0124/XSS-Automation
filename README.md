@@ -28,7 +28,7 @@ git clone https://github.com/yourusername/domain-recon-script.git
 cd domain-recon-script
 chmod +x recon.sh
 ./recon.sh
-
+```
 ## The script will install the following tools if they are not already installed:
 
 -waybackurls
