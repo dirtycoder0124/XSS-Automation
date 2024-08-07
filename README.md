@@ -25,7 +25,7 @@ Ensure you have the following installed on your system:
 Clone the repository and run the script to set up all necessary tools:
 
 ```bash
-git clone https://github.com/yourusername/domain-recon-script.git
+git clone [https://github.com/yourusername/domain-recon-script.git](https://github.com/dirtycoder0124/XSS-Automation.git)
 cd domain-recon-script
 chmod +x recon.sh
 ./recon.sh
