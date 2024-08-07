@@ -55,11 +55,12 @@ Before use, remember to replace the Blind XSS payload with your own in the `reco
 Run the script and follow the prompts to perform reconnaissance on a domain:
 
 ```bash
-./recon.sh
+./xss_automation.sh
 ```
 ![image](https://github.com/user-attachments/assets/4519493a-b4ba-49eb-af84-7eb8902270a4)
 
 - Enter the domain name when prompted.
+- Enter the Paylods.txt file if you want. Otherwise, choose default.
 - The script will create a `results/<domain>` directory to store output files.
 - Each tool will generate specific data files, which will be saved in the corresponding directory.
 
