@@ -28,11 +28,10 @@ Clone the repository and run the script to set up all necessary tools:
 git clone https://github.com/dirtycoder0124/XSS-Automation.git
 cd XSS-Automation
 chmod +x xss_automation.sh
-./xss_automation.sh
 ```
 ## Note
 
-Before use, remember to replace the Blind XSS payload with your own in the `recon.sh` file, or remove the `-b` option completely.
+Before use, remember to replace the Blind XSS payload with your own in the `xss_automation.sh` file, or remove the `-b` option completely.
 ![image](https://github.com/user-attachments/assets/d61c5b7d-acb9-4634-9dee-c8d4f56386ee)
 
 ### The script will install the following tools if they are not already installed:
