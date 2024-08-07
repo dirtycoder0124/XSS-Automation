@@ -84,6 +84,15 @@ install_tool "gf" "go install github.com/tomnomnom/gf@latest && cp -r $GOPATH/sr
 echo -e "\033[1;34mEnter the domain name:\033[0m"
 read domain
 
+# Step 1.5: Ask if user wants to provide a custom payload list for dalfox
+echo -e "\033[1;34mDo you want to provide a custom payload list for dalfox? (y/n):\033[0m"
+read provide_custom_payload
+
+if [ "$provide_custom_payload" == "y" ]; then
+    echo -e "\033[1;34mEnter the path to the custom payload list:\033[0m"
+    read custom_payload_path
+fi
+
 # Create results and domain subfolder
 mkdir -p results/$domain
 
@@ -170,7 +179,11 @@ fi
 # Step 13: Run dalfox on xss_ready.txt if Vulnerable_XSS.txt is missing
 if [ ! -f results/$domain/Vulnerable_XSS.txt ] || [ "$rerun_steps" = true ]; then
     echo -e "\033[1;33mRunning dalfox to generate Vulnerable_XSS.txt...\033[0m"
-    dalfox file results/$domain/xss_ready.txt -b https://blindf.com/bx.php -o results/$domain/Vulnerable_XSS.txt
+    if [ "$provide_custom_payload" == "y" ]; then
+        dalfox file results/$domain/xss_ready.txt -b https://blindf.com/bx.php --custom-payload $custom_payload_path -o results/$domain/Vulnerable_XSS.txt
+    else
+        dalfox file results/$domain/xss_ready.txt -b https://blindf.com/bx.php -o results/$domain/Vulnerable_XSS.txt
+    fi
 fi
 
 echo -e "\033[1;32mData collection complete. Check the 'results/$domain' directory for output files.\033[0m"
