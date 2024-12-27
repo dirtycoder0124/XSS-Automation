@@ -81,8 +81,19 @@ install_python_tool "uro" "pip3 install uro"
 install_tool "gf" "go install github.com/tomnomnom/gf@latest && cp -r $GOPATH/src/github.com/tomnomnom/gf/examples ~/.gf"
 
 # Step 1: Accept the domain name from the user
-echo -e "\033[1;34mEnter the domain name:\033[0m"
-read domain
+echo -e "\033[1;34mEnter the domain name (e.g., example.com or https://example.com):\033[0m"
+read acceptdomain
+
+# Sanitize the input to extract the clean domain name
+domain=$(echo $acceptdomain | sed -E 's|https?://||' | sed 's|/.*||')
+
+echo -e "\033[1;32mUsing domain: $domain\033[0m"
+
+
+
+
+
+
 
 # Step 1.5: Ask if user wants to provide a custom payload list for dalfox
 echo -e "\033[1;34mDo you want to provide a custom payload list for dalfox? (y/n):\033[0m"
@@ -123,7 +134,7 @@ fi
 # Step 5: Run httpx if file is missing
 if [ ! -f results/$domain/activesubs.txt ] || [ "$rerun_steps" = true ]; then
     echo -e "\033[1;33mGenerating activesubs.txt...\033[0m"
-    httpx -l results/$domain/subdomains.txt -o results/$domain/activesubs.txt -threads 200 -silent -follow-redirects
+    httpx -l results/$domain/subdomains.txt -o results/$domain/activesubs.txt -threads 200 -silent
     rerun_steps=true
 fi
 
@@ -165,7 +176,7 @@ fi
 # Step 11: Check live endpoints using httpx if live_uro1.txt is missing
 if [ ! -f results/$domain/live_uro1.txt ] || [ "$rerun_steps" = true ]; then
     echo -e "\033[1;33mGenerating live_uro1.txt...\033[0m"
-    httpx -l results/$domain/uro1.txt -o results/$domain/live_uro1.txt -threads 200 -silent -follow-redirects
+    httpx -l results/$domain/uro1.txt -o results/$domain/live_uro1.txt -threads 200 -silent
     rerun_steps=true
 fi
 
